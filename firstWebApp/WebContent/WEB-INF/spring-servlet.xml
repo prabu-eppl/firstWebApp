@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+                    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd     
+                    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+                    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+	<context:component-scan base-package="com.yms.master" />
+	
+	
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
+<property name="prefix" value="/jsp/"></property>  
+<property name="suffix" value=".jsp"></property>  
+</bean>  
+  <mvc:resources mapping="/resources/**" location="/resources/"
+	cache-period="31556926"/>
+  
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:default-servlet-handler />
+	<task:annotation-driven />
+	<!--Master YMS DB DataSource -->
+	 <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/adminedi_ediigin?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="testuser" />
+		<property name="password" value="testuser" />
+	</bean>  
+	
+		<!--Master YMS DB DataSource -->
+	<bean id="dataSourceAdmin"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/stagingm_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="stagingm_dev" />
+		<property name="password" value="!FPtqMO%QTro" />
+	</bean>  
+	
+		<!--MMFSL YMS DB DataSource -->
+	 <bean id="dataSourceMmfsl"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/stagingm_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="stagingm_dev" />
+		<property name="password" value="!FPtqMO%QTro" />
+	</bean>  
+	
+	<!--HDFC YMS DB DataSource -->
+	 <bean id="dataSourceHdfc"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/hdatym_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--L&T YMS DB DataSource -->
+	 <bean id="dataSourceLnT"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/ltauym_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--Tmf YMS DB DataSource -->
+	 <bean id="dataSourceTmf"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/tmauym_tmf?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--Diamler YMS DB DataSource -->
+	 <bean id="dataSourceDiamler"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/daimler_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--Reliance YMS DB DataSource -->
+	 <bean id="dataSourceReliance"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/reliance_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--Hero Fincorp YMS DB DataSource -->
+	 <bean id="dataSourceHeroFin"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/herofincorp_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--Hinduja YMS DB DataSource -->
+	 <bean id="dataSourceHinduja"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/hinduja_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--Magma YMS DB DataSource -->
+	 <bean id="dataSourceMagma"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/magma_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	<!--IndusInd YMS DB DataSource -->
+	 <bean id="dataSourceIndusInd"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.0.1.248:3306/indusind_yms?zeroDateTimeBehavior=convertToNull" />
+		<property name="username" value="saravana" />
+		<property name="password" value="root" />
+	</bean>  
+	
+	
+	
+	
+	<!-- Creating TransactionManager Bean, since JDBC we are creating of type 
+		DataSourceTransactionManager -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+    <bean id="transactionManagerAdmin"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceAdmin" />
+	</bean>	
+	<bean id="transactionManagerMmfsl"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceMmfsl" />		
+	</bean>
+	<bean id="transactionManagerHdfc"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceHdfc" />
+	</bean> 
+	<bean id="transactionManagerLnT"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceLnT" />
+	</bean> 
+	<bean id="transactionManagerTmf"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceTmf" />
+	</bean> 
+	<bean id="transactionManagerDiamler"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceDiamler" />
+	</bean> 
+	<bean id="transactionManagerReliance"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceReliance" />
+	</bean> 
+	<bean id="transactionManagerHeroFin"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceHeroFin" />
+	</bean> 
+	<bean id="transactionManagerHinduja"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceHinduja" />
+	</bean> 
+	<bean id="transactionManagerMagma"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceMagma" />
+	</bean> 
+	<bean id="transactionManagerIndusInd"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceIndusInd" />
+	</bean> 
+
+<!--      Master      == dataSource          ==  transactionManager          ==  jdbcTemplate   -->
+<!-- 	 Mmfsl        == dataSourceMmfsl     ==  transactionManagerMmfsl     ==  jdbcTemplateMmfsl -->
+<!-- 	 Hdfc         == dataSourceHdfc      ==  transactionManagerHdfc      ==  jdbcTemplateHdfc -->
+<!-- 	 L&T          == dataSourceLnT       ==  transactionManagerLnT       ==  jdbcTemplateLnT -->
+<!-- 	 Tmf          == dataSourceTmf       ==  transactionManagerTmf       ==  jdbcTemplateTmf -->
+<!-- 	 Diamler      == dataSourceDiamler   ==  transactionManagerDiamler   ==  jdbcTemplateDiamler -->
+<!-- 	 Reliance     == dataSourceReliance  ==  transactionManagerReliance  ==  jdbcTemplateReliance -->
+<!-- 	 HeroFincorp  == dataSourceHeroFin   ==  transactionManagerHeroFin   ==  jdbcTemplateHeroFin -->
+<!-- 	 Hinduja      == dataSourceHinduja   ==  transactionManagerHinduja   ==  jdbcTemplateHinduja -->
+<!-- 	 Magma        == dataSourceMagma     ==  transactionManagerMagma     ==  jdbcTemplateMagma -->
+<!-- 	 IndusInd     == dataSourceIndusInd  ==  transactionManagerIndusInd  ==  jdbcTemplateIndusInd -->
+
+	<!-- jdbcTemplate uses dataSource -->
+	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	 <bean id="jdbcTemplateAdmin" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceAdmin" />
+	</bean>
+	
+	
+	<bean id="jdbcTemplateMmfsl" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceMmfsl" />
+	</bean>
+
+    <bean id="jdbcTemplateHdfc" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceHdfc" />
+	</bean>
+	
+	<bean id="jdbcTemplateLnT" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceLnT" />
+	</bean>
+	
+	<bean id="jdbcTemplateTmf" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceTmf" />
+	</bean>
+	
+	<bean id="jdbcTemplateDiamler" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceDiamler" />
+	</bean>
+	
+	<bean id="jdbcTemplateReliance" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceReliance" />
+	</bean>
+	
+	<bean id="jdbcTemplateHeroFin" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceHeroFin" />
+	</bean>
+	
+	<bean id="jdbcTemplateHinduja" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceHinduja" />
+	</bean>
+	
+	<bean id="jdbcTemplateMagma" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceMagma" />
+	</bean>
+	
+	<bean id="jdbcTemplateIndusInd" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceIndusInd" />
+	</bean>
+	
+	<bean id="multipartResolver"
+  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+    <!-- setting maximum upload size --> 
+  <property name="maxUploadSize" value="1000000000000000" />
+
+ </bean>
+ 
+ 	
+	    <bean id="servicesImpl" class="com.yms.master.servicesImpl.YmsServicesImpl"></bean> 
+	    <bean id="servicesImplAll" class="com.yms.master.servicesImpl.YmsServiceImplAllClients"></bean> 
+		<bean id="servicesImplSheduler" class="com.yms.master.servicesImpl.YmsServiceImplShedulers"></bean> 
+	    <bean id="servicesImplExcel" class="com.yms.master.servicesImpl.YmsServiceImplExcel"></bean> 
+		<bean id="servicesImplApp" class="com.yms.master.servicesImpl.YmsAppServicesImpl"></bean> 
+
+<!-- 	<bean id="webservice" class="com.cc.servicesImpl.ChaloWebServiceImpl"></bean> -->
+	
+	
+</beans>

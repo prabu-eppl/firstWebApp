@@ -1,0 +1,464 @@
+YMS MASTER
+=========
+
+URL : http://localhost:8080/YMS_MASTER/servlet/
+
+
+
+1)Login Authentication
+----------------------
+url : authentic
+Req : {"loginid":"","password":""}
+Res : {
+    "status": true,
+            }
+            
+            
+            Session attribute name :
+            ---------------
+            login id  = LoginId
+            user name = UserName
+            user role = Role
+            menu count= MenuCnt
+            menu list = MenuList
+        
+        
+2)Yard Master Details
+---------------------
+url :  yardMasterDetails
+Req : 
+1){"fromDate":"","toDate":""}
+2){"fromDate":"","toDate":"","yms_yard_code":"32"}
+3){"fromDate":"","toDate":"","yms_yard_code":"32,47"}
+Res : {
+    "status": true,
+    "yardList": [
+        {
+            "yms_yard_code": "31",
+            "yard_name": "KARSAN BHAI PATEL PARKING YARD",
+            "address": "C/0 JYOTI INDUSTRIES, LAXMIPUR, KHAMARI, GONDIA",
+            "payment_mode": "NA",
+            "monthly_finalrent": 0,
+            "fe_login_id": 1,
+            "zone_id": 0,
+            "state_id": 31,
+            "city_id": 9,
+            "pincode": "NA",
+            "owner_name": "KARSAN PATEL",
+            "contact_person": "NA",
+            "contact_no_one": "9422134325",
+            "contact_no_two": "9422134325",
+            "pan_no": "NA",
+            "gstin_no": "NA",
+            "account_no": "NA",
+            "acc_holder_name": "NA",
+            "bank_name": "NA",
+            "ifsc_code": "NA",
+            "agg_start_date": "2017-12-13",
+            "agg_end_date": "2017-12-13",
+            "agg_signed_by_owner": "NO",
+            "agg_signed_by_both": "NO",
+            "yard_authorized": "2",
+            "yard_status": "2",
+            "revenue_type": "5",
+            "vehicle_stock": 0,
+            "stock_date": "2017-12-13",
+            "rfid_status": "2",
+            "remarks": "NO",
+            "client_id": "1,2,3,5,8",
+            "payment_name": "Not Applicable",
+            "client_name": "HDFC,HERO FINCORP,MMFSL,TMF,TVS",
+            "fe_name": "Senthil Kumar",
+            "zone_name": "NA",
+            "state_name": "Tamil Nadu",
+            "city_name": "CHENNAI",
+            "yard_authorized_value": "NA",
+            "yard_status_value": "NA",
+            "revenue_type_value": "TYPE 5",
+            "rfid_status_value": "NA"
+        }
+        }
+        
+
+3)Field Executive List
+=======================
+url : getFieldExeList
+Req : --
+Res : {
+    "status": true,
+    "fieldExcutiveList": [
+        {
+            "sno": 1,
+            "fe_login_id": "MAUTO0C264",
+            "fe_name": "Senthil Kumar"
+        }
+        }
+
+4)Client List
+=======================
+url : getClientList
+Req : --
+Res : {
+    "status": true,
+    "clientList": [
+        {
+            "client_id": 6,
+            "client_name": "DAIMLER"
+        }
+        }
+
+5) Zone List
+============
+url : getZoneList
+Req : --
+Res : {
+    "status": true,
+    "zoneList": [
+        {
+            "zone_id": 0,
+            "zone_name": "NA"
+        }
+        }
+
+6) State List
+============
+url : getStateList
+Req : {"zone_id":""}
+Res : 
+{
+    "status": true,
+    "stateList": [
+        {
+            "zone_id": 0,
+            "state_name": "Andaman and Nicobar Islands"
+        }
+
+7) City List
+============
+url : getCityList
+Req : {"state_id":""}
+Res : 
+{
+    "status": true,
+    "cityList": [
+        {
+            "state_id": 17,
+            "city_id": 1,
+            "city_name": "BANGALORE"
+        }
+        }
+ 
+                
+     
+8) Update Yard Master
+============
+url : updateYardMaster
+Req :{"yms_yard_code":"55","yard_name":"NEELKAMAL YARD","address":"NEELKAMAL DHABA, BASMAT ROAD, NEAR DATTA DHAM MANDIR TEMPLE","payment_mode":"NA","monthly_finalrent":0,"fe_login_id":2,"zone_id":0,"state_id":31,"city_id":9,"pincode":"NA","owner_name":"ABDUL NAYAM ABDUL SAMAD","contact_person":"NA","contact_no_one":"9921596472","contact_no_two":"9970600708","pan_no":"NA","gstin_no":"NA","account_no":"NA","acc_holder_name":"NA","bank_name":"NA","ifsc_code":"NA","agg_start_date":"2017-12-13","agg_end_date":"2017-12-13","agg_signed_by_owner":"NO","agg_signed_by_both":"NO","yard_authorized":"2","yard_status":"2","revenue_type":"5","vehicle_stock":0,"stock_date":"2017-12-13","rfid_status":"2","remarks":"NO","client_id":"6,8,1","payment_name":"Not Applicable","client_name":"DAIMLER,HERO FINCORP,MMFSL","fe_name":"Sai Krishna","zone_name":"NA","state_name":"Tamil Nadu","city_name":"CHENNAI","yard_authorized_value":"NA","yard_status_value":"NA","revenue_type_value":"TYPE 5","rfid_status_value":"NA"}
+  
+Res : 
+{
+    "status": true,
+    }   
+     
+        
+9) Merge Yard Master
+============
+url : mergeYardMaster
+Req :{"dubYardCode":"66,32","yms_yard_code":"55","yard_name":"NEELKAMAL YARD","address":"NEELKAMAL DHABA, BASMAT ROAD, NEAR DATTA DHAM MANDIR TEMPLE","payment_mode":"NA","monthly_finalrent":0,"fe_login_id":2,"zone_id":0,"state_id":31,"city_id":9,"pincode":"NA","owner_name":"ABDUL NAYAM ABDUL SAMAD","contact_person":"NA","contact_no_one":"9921596472","contact_no_two":"9970600708","pan_no":"NA","gstin_no":"NA","account_no":"NA","acc_holder_name":"NA","bank_name":"NA","ifsc_code":"NA","agg_start_date":"2017-12-13","agg_end_date":"2017-12-13","agg_signed_by_owner":"NO","agg_signed_by_both":"NO","yard_authorized":"2","yard_status":"2","revenue_type":"5","vehicle_stock":0,"stock_date":"2017-12-13","rfid_status":"2","remarks":"NO","client_id":"6,8,1","payment_name":"Not Applicable","client_name":"DAIMLER,HERO FINCORP,MMFSL","fe_name":"Sai Krishna","zone_name":"NA","state_name":"Tamil Nadu","city_name":"CHENNAI","yard_authorized_value":"NA","yard_status_value":"NA","revenue_type_value":"TYPE 5","rfid_status_value":"NA"}
+
+Res : 
+{
+    "status": true,
+    }   
+     
+
+
+10) Merged Yard Master
+============
+url : getMergedYards
+Req :{
+        }
+Res : 
+{
+    "status": true,
+    "yardList": [
+        {
+            "yms_yard_code": "31",
+            "yard_name": "KARSAN BHAI PATEL PARKING YARD",
+            "address": "C/0 JYOTI INDUSTRIES, LAXMIPUR, KHAMARI, GONDIA",
+            "payment_mode": "NA",
+            "monthly_finalrent": 0,
+            "fe_login_id": 2,
+            "zone_id": 0,
+            "state_id": 21,
+            "city_id": 76,
+            "pincode": "NA",
+            "owner_name": "KARSAN PATEL",
+            "contact_person": "NA",
+            "contact_no_one": "9422134325",
+            "contact_no_two": "9422134325",
+            "pan_no": "NA",
+            "gstin_no": "NO",
+            "account_no": "NA",
+            "acc_holder_name": "NA",
+            "bank_name": "NA",
+            "ifsc_code": "NA",
+            "agg_start_date": "2017-11-01",
+            "agg_end_date": "2017-11-01",
+            "agg_signed_by_owner": "NO",
+            "agg_signed_by_both": "NO",
+            "yard_authorized": "2",
+            "yard_status": "2",
+            "revenue_type": "5",
+            "vehicle_stock": 0,
+            "stock_date": "2017-11-28",
+            "rfid_status": "2",
+            "remarks": "NO",
+            "client_id": "8",
+            "payment_name": "Not Applicable",
+            "client_name": "HERO FINCORP",
+            "fe_name": "Sai Krishna",
+            "zone_name": "NA",
+            "state_name": "Maharashtra",
+            "city_name": "NAGPUR",
+            "yard_authorized_value": "NA",
+            "yard_status_value": "NA",
+            "revenue_type_value": "TYPE 5",
+            "rfid_status_value": "NA",
+            "merged_with": "141",
+            "merged_by": "123",
+            "merged_date_time": "2017-12-26 12:05:27.0"
+        }
+        } 
+
+        
+11) get Bank Details By IFSC
+============
+url : getBankDetailsByIFSC
+Req :{"ifsc_code":"UTIB0000006"}
+
+Res : 
+{
+    "status": true,
+    "ifsc_code": "UTIB0000006",
+    "bank_name": "Axis Bank",
+    "branch": "CHENNAI",
+    "city": "CHENNAI",
+    "district": "CHENNAI",
+    "state": "TAMIL NADU",
+    "address": "82 DR RADHAKRISHNAN SALAI  MYLAPORE, CHENNAI",
+    "contact_no": ""
+} 
+
+ 
+12) get Stock Details
+============
+url : getStockDetails
+Req1 :{}
+Req2 :{"client_id_array":[1,2,3]}
+Req3 :{"yms_yard_code":""}
+Req4 :{"fromDate":"","toDate":""}
+
+Res : 
+{
+    "status": true,
+    "stockList": [
+        {
+            "client_id": "1",
+            "client_name": "MMFSL",
+            "yms_id": "C055144355330",
+            "contract_no": "3206140",
+            "garage_code_actual": "1579",
+            "garage_name": "SVA STOCK YARD",
+            "engine_no": "F8BIN4719545",
+            "chassis_no": "MA3EVB11S01525362EE",
+            "reg_no": "TS09EA9214",
+            "vehi_catogory": "SCV",
+            "year": "2011",
+            "month": "6",
+            "make": "BUGATTI",
+            "model": "VEYRON",
+            "variant": "16.4 GRAND SPORT",
+            "location": "AJMER",
+            "color": "GOLD",
+            "valuator_id": "1084",
+            "userid": "y1579",
+            "lead_date": "2015-02-24 14:43:55.0",
+            "repo_date": "2015-03-12 15:16:14.0",
+            "yard_entry_date": "2015-03-12 17:42:53"
+        }
+        }
+        
+ 13) get Repo Completed Details
+============
+url : getRepoDetails
+Req1 :{}
+Req2 :{"client_id_array":[1,2,3]}
+Req3 :{"yms_yard_code":""}
+
+Res : 
+{
+    "status": true,
+    "stockList": [
+        {
+            "client_id": "1",
+            "client_name": "MMFSL",
+            "yms_id": "C055144355330",
+            "contract_no": "3206140",
+            "garage_code_actual": "1579",
+            "garage_name": "SVA STOCK YARD",
+            "engine_no": "F8BIN4719545",
+            "chassis_no": "MA3EVB11S01525362EE",
+            "reg_no": "TS09EA9214",
+            "vehi_catogory": "SCV",
+            "year": "2011",
+            "month": "6",
+            "make": "BUGATTI",
+            "model": "VEYRON",
+            "variant": "16.4 GRAND SPORT",
+            "location": "AJMER",
+            "color": "GOLD",
+            "valuator_id": "1084",
+            "userid": "y1579",
+            "lead_date": "2015-02-24 14:43:55.0",
+            "repo_date": "2015-03-12 15:16:14.0",
+            "yard_entry_date": "2015-03-12 17:42:53"
+        }
+        }     
+ 14) get Vehicle Entry Completed Details
+============
+url : getEntryDetails
+Req1 :{}
+Req2 :{"client_id_array":[1,2,3]}
+Req3 :{"yms_yard_code":""}
+
+Res : 
+{
+    "status": true,
+    "stockList": [
+        {
+            "client_id": "1",
+            "client_name": "MMFSL",
+            "yms_id": "C055144355330",
+            "contract_no": "3206140",
+            "garage_code_actual": "1579",
+            "garage_name": "SVA STOCK YARD",
+            "engine_no": "F8BIN4719545",
+            "chassis_no": "MA3EVB11S01525362EE",
+            "reg_no": "TS09EA9214",
+            "vehi_catogory": "SCV",
+            "year": "2011",
+            "month": "6",
+            "make": "BUGATTI",
+            "model": "VEYRON",
+            "variant": "16.4 GRAND SPORT",
+            "location": "AJMER",
+            "color": "GOLD",
+            "valuator_id": "1084",
+            "userid": "y1579",
+            "lead_date": "2015-02-24 14:43:55.0",
+            "repo_date": "2015-03-12 15:16:14.0",
+            "yard_entry_date": "2015-03-12 17:42:53"
+        }
+        }     
+ 15) get Repo Release Completed Details
+============
+url : getRepoReleaseDetails
+Req1 :{}
+Req2 :{"client_id_array":[1,2,3]}
+Req3 :{"yms_yard_code":""}
+
+Res : 
+{
+    "status": true,
+    "stockList": [
+        {
+            "client_id": "1",
+            "client_name": "MMFSL",
+            "yms_id": "C055144355330",
+            "contract_no": "3206140",
+            "garage_code_actual": "1579",
+            "garage_name": "SVA STOCK YARD",
+            "engine_no": "F8BIN4719545",
+            "chassis_no": "MA3EVB11S01525362EE",
+            "reg_no": "TS09EA9214",
+            "vehi_catogory": "SCV",
+            "year": "2011",
+            "month": "6",
+            "make": "BUGATTI",
+            "model": "VEYRON",
+            "variant": "16.4 GRAND SPORT",
+            "location": "AJMER",
+            "color": "GOLD",
+            "valuator_id": "1084",
+            "userid": "y1579",
+            "lead_date": "2015-02-24 14:43:55.0",
+            "repo_date": "2015-03-12 15:16:14.0",
+            "yard_entry_date": "2015-03-12 17:42:53"
+        }
+        }     
+
+ 16) get Vehicle Exit Completed Details
+============
+url : getExitDetails
+Req1 :{}
+Req2 :{"client_id_array":[1,2,3]}
+Req3 :{"yms_yard_code":""}
+
+Res : 
+{
+    "status": true,
+    "stockList": [
+        {
+            "client_id": "1",
+            "client_name": "MMFSL",
+            "yms_id": "C055144355330",
+            "contract_no": "3206140",
+            "garage_code_actual": "1579",
+            "garage_name": "SVA STOCK YARD",
+            "engine_no": "F8BIN4719545",
+            "chassis_no": "MA3EVB11S01525362EE",
+            "reg_no": "TS09EA9214",
+            "vehi_catogory": "SCV",
+            "year": "2011",
+            "month": "6",
+            "make": "BUGATTI",
+            "model": "VEYRON",
+            "variant": "16.4 GRAND SPORT",
+            "location": "AJMER",
+            "color": "GOLD",
+            "valuator_id": "1084",
+            "userid": "y1579",
+            "lead_date": "2015-02-24 14:43:55.0",
+            "repo_date": "2015-03-12 15:16:14.0",
+            "yard_entry_date": "2015-03-12 17:42:53"
+        }
+        }       
+        
+17) Dash board page
+============
+url : getDashboardDetails
+Req :
+
+Res : 
+{
+    "status": true,
+    "repo_count": 37055,
+    "entry_count": 35714,
+    "exit_count": 3786,
+    "clientList": [
+        {
+            "client_id": "1",
+            "client_name": "MMFSL",
+            "repo_count": 37002,
+            "entry_count": 35632,
+            "exit_count": 3762
+        },
+        {
+            "client_id": "2",
+            "client_name": "HDFC",
+            "repo_count": 0,
+            "entry_count": 0,
+            "exit_count": 0
+        }
+        }       
